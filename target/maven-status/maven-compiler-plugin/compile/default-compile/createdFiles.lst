@@ -1,0 +1,5 @@
+com\grupo4\grupo4\controller\MedicamentoController.class
+com\grupo4\grupo4\Grupo4Application.class
+com\grupo4\grupo4\service\MedicamentoService.class
+com\grupo4\grupo4\model\Medicamento.class
+com\grupo4\grupo4\repository\MedicamentoRepository.class

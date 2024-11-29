@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Resultados da Pesquisa de Medicamentos</h1>
+<form action="#" th:action="@{/pesquisar}" method="get">
+    <input type="text" name="nome" placeholder="Pesquisar por nome">
+    <input type="text" name="categoria" placeholder="Pesquisar por categoria">
+    <button type="submit">Pesquisar</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Disponível</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="medicamento : ${medicamentos}">
+            <td th:text="${medicamento.nome}"></td>
+            <td th:text="${medicamento.categoria}"></td>
+            <td th:text="${medicamento.preco}"></td>
+            <td th:text="${medicamento.disponivel ? 'Sim' : 'Não'}"></td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(medicamentos)}">
+            <td colspan="4">Nenhum medicamento encontrado.</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
